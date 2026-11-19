@@ -4,12 +4,19 @@ Constructs a complete, fully interactive Power BI Project with:
 - Star-schema semantic model (model.bim)
 - Dynamic M queries bound to SQLite-exported datasets
 - Automated database change synchronization
-- 3 interactive dashboard pages with visual containers, KPIs, charts, and slicers.
+- 3 interactive dashboard pages with 24 visual containers, KPIs, charts, and tables.
 """
 
+import sys
 import json
 import logging
 from pathlib import Path
+
+# Ensure project root in sys.path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from config import BASE_DIR, POWERBI_DIR, DATABASE_FILE
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -169,7 +176,7 @@ in
                         },
                         {
                             "name": "Active Orders",
-                            "expression": "CALCULATE(COUNTROWS(fact_orders), fact_orders[order_status] IN {\"PLACED\", \"PREPARING\", \"PACKING\"})"
+                            "expression": 'CALCULATE(COUNTROWS(fact_orders), fact_orders[order_status] IN {"PLACED", "PREPARING", "PACKING", "DISPATCHED"})'
                         },
                         {
                             "name": "Average Prep Time",
@@ -342,7 +349,7 @@ in
     return model_bim
 
 
-def make_kpi_card(name: str, measure_name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int) -> dict:
+def make_kpi_card(name: str, measure_name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int, table_name: str = "fact_orders") -> dict:
     """Creates a validated Power BI KPI Card visualContainer with prototypeQuery."""
     config_dict = {
         "name": name,
@@ -362,18 +369,18 @@ def make_kpi_card(name: str, measure_name: str, title: str, x: float, y: float, 
         "singleVisual": {
             "visualType": "card",
             "projections": {
-                "Values": [{"queryRef": f"fact_orders.{measure_name}"}]
+                "Values": [{"queryRef": f"{table_name}.{measure_name}"}]
             },
             "prototypeQuery": {
                 "Version": 2,
-                "From": [{"Name": "f", "Entity": "fact_orders", "Type": 0}],
+                "From": [{"Name": "f", "Entity": table_name, "Type": 0}],
                 "Select": [
                     {
                         "Measure": {
                             "Expression": {"SourceRef": {"Source": "f"}},
                             "Property": measure_name
                         },
-                        "Name": f"fact_orders.{measure_name}",
+                        "Name": f"{table_name}.{measure_name}",
                         "NativeReferenceName": measure_name
                     }
                 ]
@@ -400,7 +407,7 @@ def make_kpi_card(name: str, measure_name: str, title: str, x: float, y: float, 
     }
 
 
-def make_column_chart(name: str, cat_column: str, measure_name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int) -> dict:
+def make_column_chart(name: str, cat_column: str, measure_name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int, table_name: str = "fact_orders") -> dict:
     """Creates a validated Power BI Clustered Column Chart visualContainer with prototypeQuery."""
     config_dict = {
         "name": name,
@@ -420,19 +427,19 @@ def make_column_chart(name: str, cat_column: str, measure_name: str, title: str,
         "singleVisual": {
             "visualType": "clusteredColumnChart",
             "projections": {
-                "Category": [{"queryRef": f"fact_orders.{cat_column}", "active": True}],
-                "Y": [{"queryRef": f"fact_orders.{measure_name}"}]
+                "Category": [{"queryRef": f"{table_name}.{cat_column}", "active": True}],
+                "Y": [{"queryRef": f"{table_name}.{measure_name}"}]
             },
             "prototypeQuery": {
                 "Version": 2,
-                "From": [{"Name": "f", "Entity": "fact_orders", "Type": 0}],
+                "From": [{"Name": "f", "Entity": table_name, "Type": 0}],
                 "Select": [
                     {
                         "Column": {
                             "Expression": {"SourceRef": {"Source": "f"}},
                             "Property": cat_column
                         },
-                        "Name": f"fact_orders.{cat_column}",
+                        "Name": f"{table_name}.{cat_column}",
                         "NativeReferenceName": cat_column
                     },
                     {
@@ -440,7 +447,7 @@ def make_column_chart(name: str, cat_column: str, measure_name: str, title: str,
                             "Expression": {"SourceRef": {"Source": "f"}},
                             "Property": measure_name
                         },
-                        "Name": f"fact_orders.{measure_name}",
+                        "Name": f"{table_name}.{measure_name}",
                         "NativeReferenceName": measure_name
                     }
                 ]
@@ -467,7 +474,7 @@ def make_column_chart(name: str, cat_column: str, measure_name: str, title: str,
     }
 
 
-def make_line_chart(name: str, cat_column: str, measure_name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int) -> dict:
+def make_line_chart(name: str, cat_column: str, measure_name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int, table_name: str = "fact_orders") -> dict:
     """Creates a validated Power BI Line Chart visualContainer with prototypeQuery."""
     config_dict = {
         "name": name,
@@ -487,19 +494,19 @@ def make_line_chart(name: str, cat_column: str, measure_name: str, title: str, x
         "singleVisual": {
             "visualType": "lineChart",
             "projections": {
-                "Category": [{"queryRef": f"fact_orders.{cat_column}", "active": True}],
-                "Y": [{"queryRef": f"fact_orders.{measure_name}"}]
+                "Category": [{"queryRef": f"{table_name}.{cat_column}", "active": True}],
+                "Y": [{"queryRef": f"{table_name}.{measure_name}"}]
             },
             "prototypeQuery": {
                 "Version": 2,
-                "From": [{"Name": "f", "Entity": "fact_orders", "Type": 0}],
+                "From": [{"Name": "f", "Entity": table_name, "Type": 0}],
                 "Select": [
                     {
                         "Column": {
                             "Expression": {"SourceRef": {"Source": "f"}},
                             "Property": cat_column
                         },
-                        "Name": f"fact_orders.{cat_column}",
+                        "Name": f"{table_name}.{cat_column}",
                         "NativeReferenceName": cat_column
                     },
                     {
@@ -507,7 +514,7 @@ def make_line_chart(name: str, cat_column: str, measure_name: str, title: str, x
                             "Expression": {"SourceRef": {"Source": "f"}},
                             "Property": measure_name
                         },
-                        "Name": f"fact_orders.{measure_name}",
+                        "Name": f"{table_name}.{measure_name}",
                         "NativeReferenceName": measure_name
                     }
                 ]
@@ -534,8 +541,8 @@ def make_line_chart(name: str, cat_column: str, measure_name: str, title: str, x
     }
 
 
-def make_table_visual(name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int) -> dict:
-    """Creates a validated Power BI Table visualContainer with prototypeQuery."""
+def make_store_table(name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int) -> dict:
+    """Creates the Restaurant Hub Efficiency Scorecard Table visualContainer."""
     config_dict = {
         "name": name,
         "layouts": [
@@ -560,6 +567,7 @@ def make_table_visual(name: str, title: str, x: float, y: float, w: float, h: fl
                     {"queryRef": "fact_orders.Total Orders"},
                     {"queryRef": "fact_orders.Average Prep Time"},
                     {"queryRef": "fact_orders.Food Wait for Rider"},
+                    {"queryRef": "fact_orders.Rider Wait for Food"},
                     {"queryRef": "fact_orders.On Time Delivery %"}
                 ]
             },
@@ -596,6 +604,11 @@ def make_table_visual(name: str, title: str, x: float, y: float, w: float, h: fl
                         "NativeReferenceName": "Food Wait for Rider"
                     },
                     {
+                        "Measure": {"Expression": {"SourceRef": {"Source": "f"}}, "Property": "Rider Wait for Food"},
+                        "Name": "fact_orders.Rider Wait for Food",
+                        "NativeReferenceName": "Rider Wait for Food"
+                    },
+                    {
                         "Measure": {"Expression": {"SourceRef": {"Source": "f"}}, "Property": "On Time Delivery %"},
                         "Name": "fact_orders.On Time Delivery %",
                         "NativeReferenceName": "On Time Delivery %"
@@ -624,28 +637,148 @@ def make_table_visual(name: str, title: str, x: float, y: float, w: float, h: fl
     }
 
 
+def make_dispatch_table(name: str, title: str, x: float, y: float, w: float, h: float, tab_order: int) -> dict:
+    """Creates the Courier Staged Dispatch Log Table visualContainer."""
+    config_dict = {
+        "name": name,
+        "layouts": [
+            {
+                "id": 0,
+                "position": {
+                    "x": x,
+                    "y": y,
+                    "z": float(tab_order // 1000),
+                    "width": w,
+                    "height": h,
+                    "tabOrder": tab_order
+                }
+            }
+        ],
+        "singleVisual": {
+            "visualType": "tableEx",
+            "projections": {
+                "Values": [
+                    {"queryRef": "dispatch_performance.order_id"},
+                    {"queryRef": "dispatch_performance.store_id"},
+                    {"queryRef": "dispatch_performance.predicted_dispatch_delay"},
+                    {"queryRef": "dispatch_performance.predicted_rider_travel_time"},
+                    {"queryRef": "dispatch_performance.food_wait_for_rider"},
+                    {"queryRef": "dispatch_performance.rider_wait_for_food"},
+                    {"queryRef": "dispatch_performance.on_time_delivery"}
+                ]
+            },
+            "prototypeQuery": {
+                "Version": 2,
+                "From": [{"Name": "d", "Entity": "dispatch_performance", "Type": 0}],
+                "Select": [
+                    {
+                        "Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "order_id"},
+                        "Name": "dispatch_performance.order_id",
+                        "NativeReferenceName": "Order ID"
+                    },
+                    {
+                        "Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "store_id"},
+                        "Name": "dispatch_performance.store_id",
+                        "NativeReferenceName": "Store ID"
+                    },
+                    {
+                        "Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "predicted_dispatch_delay"},
+                        "Name": "dispatch_performance.predicted_dispatch_delay",
+                        "NativeReferenceName": "Dispatch Delay (min)"
+                    },
+                    {
+                        "Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "predicted_rider_travel_time"},
+                        "Name": "dispatch_performance.predicted_rider_travel_time",
+                        "NativeReferenceName": "Rider Travel (min)"
+                    },
+                    {
+                        "Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "food_wait_for_rider"},
+                        "Name": "dispatch_performance.food_wait_for_rider",
+                        "NativeReferenceName": "Food Wait (min)"
+                    },
+                    {
+                        "Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "rider_wait_for_food"},
+                        "Name": "dispatch_performance.rider_wait_for_food",
+                        "NativeReferenceName": "Rider Wait (min)"
+                    },
+                    {
+                        "Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "on_time_delivery"},
+                        "Name": "dispatch_performance.on_time_delivery",
+                        "NativeReferenceName": "On-Time (1/0)"
+                    }
+                ]
+            },
+            "vcObjects": {
+                "title": [{
+                    "properties": {
+                        "show": {"expr": {"literal": {"value": True}}},
+                        "text": {"expr": {"literal": {"value": title}}}
+                    }
+                }]
+            }
+        }
+    }
+    return {
+        "x": x,
+        "y": y,
+        "z": float(tab_order // 1000),
+        "width": w,
+        "height": h,
+        "tabOrder": tab_order,
+        "config": json.dumps(config_dict),
+        "filters": "[]"
+    }
+
+
 def build_report_json() -> dict:
-    """Generates the interactive multi-page Power BI report canvas with visuals and full themeCollection."""
+    """Generates the interactive 3-page Power BI report canvas with 24 visuals and full themeCollection."""
+    
+    # PAGE 1: EXECUTIVE OVERVIEW & DEMAND TRENDS (10 Visuals)
     page1_visuals = [
-        make_kpi_card("kpi_total_orders", "Total Orders", "Total Network Orders", 20.0, 20.0, 280.0, 130.0, 1000),
-        make_kpi_card("kpi_on_time", "On Time Delivery %", "On-Time Delivery SLA %", 320.0, 20.0, 280.0, 130.0, 2000),
-        make_kpi_card("kpi_avg_prep", "Average Prep Time", "Avg Kitchen Prep Time (min)", 620.0, 20.0, 280.0, 130.0, 3000),
-        make_kpi_card("kpi_cancellation", "Cancellation Rate", "Order Cancellation Rate %", 920.0, 20.0, 280.0, 130.0, 4000),
-        make_column_chart("chart_traffic", "traffic_level", "Total Orders", "Order Volume by Traffic Level", 20.0, 170.0, 580.0, 480.0, 5000),
-        make_line_chart("chart_hourly", "order_hour", "Total Orders", "24-Hour Hourly Demand Throughput Profile", 620.0, 170.0, 580.0, 480.0, 6000),
+        make_kpi_card("kpi_total_orders", "Total Orders", "Total Network Orders", 20.0, 15.0, 280.0, 120.0, 1000),
+        make_kpi_card("kpi_on_time", "On Time Delivery %", "On-Time Delivery SLA %", 320.0, 15.0, 280.0, 120.0, 2000),
+        make_kpi_card("kpi_avg_prep", "Average Prep Time", "Avg Kitchen Prep Time (min)", 620.0, 15.0, 280.0, 120.0, 3000),
+        make_kpi_card("kpi_cancellation", "Cancellation Rate", "Order Cancellation Rate %", 920.0, 15.0, 280.0, 120.0, 4000),
+        
+        make_column_chart("chart_traffic", "traffic_level", "Total Orders", "Order Volume by Traffic Density", 20.0, 150.0, 380.0, 250.0, 5000),
+        make_line_chart("chart_hourly", "order_hour", "Total Orders", "24-Hour Hourly Demand Throughput Profile", 420.0, 150.0, 480.0, 250.0, 6000),
+        make_column_chart("chart_weather", "weather_condition", "Total Orders", "Order Volume by Weather Condition", 920.0, 150.0, 340.0, 250.0, 7000),
+        
+        make_column_chart("chart_items", "item_count", "Total Orders", "Order Volume by Basket Size / Item Count", 20.0, 415.0, 380.0, 275.0, 8000),
+        make_column_chart("chart_dispatch_traffic", "traffic_level", "Average Dispatch Delay", "Staged Dispatch Delay by Traffic Level", 420.0, 415.0, 480.0, 275.0, 9000),
+        make_column_chart("chart_weather_sla", "weather_condition", "On Time Delivery %", "On-Time SLA % by Weather Impact", 920.0, 415.0, 340.0, 275.0, 10000),
     ]
 
+    # PAGE 2: KITCHEN ANALYTICS & SYNCHRONIZATION (7 Visuals)
     page2_visuals = [
-        make_kpi_card("kpi_food_wait", "Food Wait for Rider", "Food Wait for Rider (min)", 20.0, 20.0, 380.0, 130.0, 1000),
-        make_kpi_card("kpi_rider_wait", "Rider Wait for Food", "Rider Wait for Food (min)", 420.0, 20.0, 380.0, 130.0, 2000),
-        make_kpi_card("kpi_dispatch_delay", "Average Dispatch Delay", "Avg Staged Dispatch Delay (min)", 820.0, 20.0, 380.0, 130.0, 3000),
-        make_table_visual("table_store_league", "Restaurant Hub Efficiency & Bottleneck Scorecard", 20.0, 170.0, 1180.0, 480.0, 4000),
+        make_kpi_card("kpi_food_wait", "Food Wait for Rider", "Food Wait for Rider (min)", 20.0, 15.0, 280.0, 120.0, 1000),
+        make_kpi_card("kpi_rider_wait", "Rider Wait for Food", "Rider Wait for Food (min)", 320.0, 15.0, 280.0, 120.0, 2000),
+        make_kpi_card("kpi_dispatch_delay", "Average Dispatch Delay", "Avg Staged Dispatch Delay (min)", 620.0, 15.0, 280.0, 120.0, 3000),
+        make_kpi_card("kpi_total_idle", "Total Idling Wait Time", "Total Idling Wait Time (min)", 920.0, 15.0, 280.0, 120.0, 4000),
+        
+        make_column_chart("chart_item_prep", "item_count", "Average Prep Time", "Kitchen Prep Time Scaling by Item Count", 20.0, 150.0, 610.0, 240.0, 5000),
+        make_column_chart("chart_traffic_food_wait", "traffic_level", "Food Wait for Rider", "Counter Food Waiting Duration by Traffic Level", 650.0, 150.0, 610.0, 240.0, 6000),
+        
+        make_store_table("table_store_league", "Restaurant Hub Efficiency & Bottleneck Scorecard", 20.0, 405.0, 1240.0, 285.0, 7000),
+    ]
+
+    # PAGE 3: FLEET LOGISTICS & DISPATCH DIAGNOSTICS (7 Visuals)
+    page3_visuals = [
+        make_kpi_card("kpi_p3_travel", "Average Rider Travel Time", "Avg Courier Transit Time (min)", 20.0, 15.0, 280.0, 120.0, 1000),
+        make_kpi_card("kpi_p3_delay", "Average Dispatch Delay", "Avg Staged Dispatch Delay (min)", 320.0, 15.0, 280.0, 120.0, 2000),
+        make_kpi_card("kpi_p3_ontime", "On Time Delivery %", "Courier On-Time Fulfillment %", 620.0, 15.0, 280.0, 120.0, 3000),
+        make_kpi_card("kpi_p3_eff", "Dispatch Efficiency Index", "Dispatch Efficiency Index", 920.0, 15.0, 280.0, 120.0, 4000),
+        
+        make_column_chart("chart_travel_traffic", "traffic_level", "Average Rider Travel Time", "Rider Transit Duration by Traffic Level", 20.0, 150.0, 610.0, 240.0, 5000),
+        make_column_chart("chart_travel_weather", "weather_condition", "Average Rider Travel Time", "Transit Time Inflation under Severe Weather", 650.0, 150.0, 610.0, 240.0, 6000),
+        
+        make_dispatch_table("table_dispatch_log", "Real-Time Courier Staged Dispatch Log", 20.0, 405.0, 1240.0, 285.0, 7000),
     ]
 
     sections = [
         {
             "name": "Section_Executive_Overview",
-            "displayName": "1. Executive Overview",
+            "displayName": "1. Executive Overview & Operations",
             "displayOption": 1,
             "width": 1280.0,
             "height": 720.0,
@@ -655,13 +788,23 @@ def build_report_json() -> dict:
         },
         {
             "name": "Section_Kitchen_Wait_Times",
-            "displayName": "2. Kitchen Analytics & Dispatch",
+            "displayName": "2. Kitchen Analytics & Synchronization",
             "displayOption": 1,
             "width": 1280.0,
             "height": 720.0,
             "filters": "[]",
             "config": "{}",
             "visualContainers": page2_visuals
+        },
+        {
+            "name": "Section_Fleet_Logistics",
+            "displayName": "3. Fleet Logistics & Dispatch Diagnostics",
+            "displayOption": 1,
+            "width": 1280.0,
+            "height": 720.0,
+            "filters": "[]",
+            "config": "{}",
+            "visualContainers": page3_visuals
         }
     ]
 
@@ -782,7 +925,7 @@ def generate_pbib_project():
     print("=" * 65)
     print(f"Project File:        {PBIB_ROOT.name} (and {PBIP_ROOT.name})")
     print(f"Semantic Model:      KitchenSync_Analytics.SemanticModel/model.bim")
-    print(f"Report Canvas:       KitchenSync_Analytics.Report/report.json")
+    print(f"Report Canvas:       KitchenSync_Analytics.Report/report.json (24 Visuals, 3 Pages)")
     print(f"Data Connection:     Direct synchronization to SQLite Data Mart ({POWERBI_DIR})")
     print("=" * 65 + "\n")
 

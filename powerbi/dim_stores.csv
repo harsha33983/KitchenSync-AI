@@ -1,26 +1,26 @@
 store_id,store_name,location,latitude,longitude,average_prep_time
-AGRRES01,Central Gourmet Kitchen (AGRRES01),Central Commercial Hub,27.1617,78.0115,18.0
-AGRRES010,Central Gourmet Kitchen (AGRRES010),Central Commercial Hub,27.1633,78.057,18.0
-AGRRES02,Central Gourmet Kitchen (AGRRES02),Central Commercial Hub,26.9124,75.7873,18.0
-AGRRES03,Central Gourmet Kitchen (AGRRES03),Central Commercial Hub,27.1608,78.0116,18.0
-AGRRES04,Central Gourmet Kitchen (AGRRES04),Central Commercial Hub,27.1959,77.9981,18.0
-AGRRES05,Central Gourmet Kitchen (AGRRES05),Central Commercial Hub,27.2017,78.0076,18.0
-AGRRES06,Central Gourmet Kitchen (AGRRES06),Central Commercial Hub,26.9124,75.7873,18.0
-AGRRES07,Central Gourmet Kitchen (AGRRES07),Central Commercial Hub,27.1609,78.0441,18.0
-AGRRES08,Central Gourmet Kitchen (AGRRES08),Central Commercial Hub,27.1609,78.0441,18.0
-AGRRES09,Central Gourmet Kitchen (AGRRES09),Central Commercial Hub,26.9124,75.7873,18.0
-AGRRES11,Central Gourmet Kitchen (AGRRES11),Central Commercial Hub,27.1633,78.057,18.0
-AGRRES12,Central Gourmet Kitchen (AGRRES12),Central Commercial Hub,27.1651,78.0151,18.0
-AGRRES13,Central Gourmet Kitchen (AGRRES13),Central Commercial Hub,27.1598,78.043,18.0
-AGRRES14,Central Gourmet Kitchen (AGRRES14),Central Commercial Hub,27.1619,78.0402,18.0
-AGRRES15,Central Gourmet Kitchen (AGRRES15),Central Commercial Hub,26.9124,75.7873,18.0
-AGRRES16,Central Gourmet Kitchen (AGRRES16),Central Commercial Hub,26.9124,75.7873,18.0
-AGRRES17,Central Gourmet Kitchen (AGRRES17),Central Commercial Hub,27.1578,78.0473,18.0
-AGRRES18,Central Gourmet Kitchen (AGRRES18),Central Commercial Hub,27.1617,78.0347,18.0
-AGRRES19,Central Gourmet Kitchen (AGRRES19),Central Commercial Hub,26.9124,75.7873,18.0
-AGRRES20,Central Gourmet Kitchen (AGRRES20),Central Commercial Hub,27.1588,78.0454,18.0
-ALHRES01,Central Gourmet Kitchen (ALHRES01),Central Commercial Hub,25.4546,81.8345,18.0
-ALHRES010,Central Gourmet Kitchen (ALHRES010),Central Commercial Hub,26.9124,75.7873,18.0
-ALHRES02,Central Gourmet Kitchen (ALHRES02),Central Commercial Hub,25.4534,81.8332,18.0
-ALHRES03,Central Gourmet Kitchen (ALHRES03),Central Commercial Hub,25.4515,81.8326,18.0
-ALHRES04,Central Gourmet Kitchen (ALHRES04),Central Commercial Hub,26.9124,75.7873,18.0
+AGRRES01,Central Gourmet Hub (AGRRES01),Downtown Metro,27.1617,78.0115,16.5
+AGRRES010,Burger Craft & Brews (AGRRES010),Tech Boulevard,27.1633,78.057,14.0
+AGRRES02,Northside Artisan Pizzeria (AGRRES02),North Commercial Park,26.9124,75.7873,19.5
+AGRRES03,Royal Dum Biryani & Grills (AGRRES03),South City Mall,27.1608,78.0116,22.0
+AGRRES04,QuickBite Fast Food Co. (AGRRES04),Eastside IT Corridor,27.1959,77.9981,12.5
+AGRRES05,GreenBowl Salad & Superfoods (AGRRES05),Financial District,27.2017,78.0076,13.5
+AGRRES06,Dragon Wok Asian Street Kitchen (AGRRES06),Midtown Junction,26.9124,75.7873,17.0
+AGRRES07,SweetCraving Patisserie & Bakes (AGRRES07),Heritage Quarter,27.1609,78.0441,11.0
+AGRRES08,Coastal Wave Seafood & Curries (AGRRES08),Harbor Promenade,27.1609,78.0441,23.5
+AGRRES09,Taco Fiesta Mexican Grill (AGRRES09),Westside Avenue,26.9124,75.7873,15.0
+AGRRES11,Chai & Samosa Junction (AGRRES11),Metro Interchange,27.1633,78.057,10.5
+AGRRES12,Pasta Fresca Italian Trattoria (AGRRES12),University Square,27.1651,78.0151,18.0
+AGRRES13,Tandoori Nights Barbecue Hub (AGRRES13),North Gate Bypass,27.1598,78.043,21.5
+AGRRES14,Siam Orchid Thai Bistro (AGRRES14),Lakeside Enclave,27.1619,78.0402,19.0
+AGRRES15,Golden Spoon Multi-Cuisine Diner (AGRRES15),Suburban Plaza,26.9124,75.7873,16.0
+AGRRES16,The Daily Roll Sushi Bar (AGRRES16),City Centre Atrium,26.9124,75.7873,20.0
+AGRRES17,Falafel & Shawarma Oasis (AGRRES17),Trade Center Ring,27.1578,78.0473,13.0
+AGRRES18,Smoky BBQ Pit House (AGRRES18),Industrial Estate Road,27.1617,78.0347,24.0
+AGRRES19,Waffle & Crepe Factory (AGRRES19),Fashion Street Walkway,26.9124,75.7873,12.0
+AGRRES20,Bao & Dim Sum Express (AGRRES20),Skyline Cyber City,27.1588,78.0454,15.5
+ALHRES01,Grand Darbar Mughlai Feast (ALHRES01),Old Fort Road,25.4546,81.8345,23.0
+ALHRES010,Kathi Roll Express (ALHRES010),Railway Station Road,26.9124,75.7873,11.5
+ALHRES02,Southern Spices Chettinad Kitchen (ALHRES02),Civil Lines Main,25.4534,81.8332,18.5
+ALHRES03,Urban Waffle & Shake Cafe (ALHRES03),Cantonment Plaza,25.4515,81.8326,13.0
+ALHRES04,Momo Master Himalayan Kitchen (ALHRES04),Mall Mile Crossing,26.9124,75.7873,14.5

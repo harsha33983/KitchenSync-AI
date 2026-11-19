@@ -158,7 +158,7 @@
           },
           {
             "name": "Active Orders",
-            "expression": "CALCULATE(COUNTROWS(fact_orders), fact_orders[order_status] IN {\"PLACED\", \"PREPARING\", \"PACKING\"})"
+            "expression": "CALCULATE(COUNTROWS(fact_orders), fact_orders[order_status] IN {\"PLACED\", \"PREPARING\", \"PACKING\", \"DISPATCHED\"})"
           },
           {
             "name": "Average Prep Time",

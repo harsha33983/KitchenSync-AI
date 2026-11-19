@@ -17,7 +17,7 @@
   "sections": [
     {
       "name": "Section_Executive_Overview",
-      "displayName": "1. Executive Overview",
+      "displayName": "1. Executive Overview & Operations",
       "displayOption": 1,
       "width": 1280.0,
       "height": 720.0,
@@ -26,69 +26,109 @@
       "visualContainers": [
         {
           "x": 20.0,
-          "y": 20.0,
+          "y": 15.0,
           "z": 1.0,
           "width": 280.0,
-          "height": 130.0,
+          "height": 120.0,
           "tabOrder": 1000,
-          "config": "{\"name\": \"kpi_total_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 20.0, \"z\": 1.0, \"width\": 280.0, \"height\": 130.0, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Total Network Orders\"}}}}}]}}}",
+          "config": "{\"name\": \"kpi_total_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 15.0, \"z\": 1.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Total Network Orders\"}}}}}]}}}",
           "filters": "[]"
         },
         {
           "x": 320.0,
-          "y": 20.0,
+          "y": 15.0,
           "z": 2.0,
           "width": 280.0,
-          "height": 130.0,
+          "height": 120.0,
           "tabOrder": 2000,
-          "config": "{\"name\": \"kpi_on_time\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 320.0, \"y\": 20.0, \"z\": 2.0, \"width\": 280.0, \"height\": 130.0, \"tabOrder\": 2000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.On Time Delivery %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"On Time Delivery %\"}, \"Name\": \"fact_orders.On Time Delivery %\", \"NativeReferenceName\": \"On Time Delivery %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"On-Time Delivery SLA %\"}}}}}]}}}",
+          "config": "{\"name\": \"kpi_on_time\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 320.0, \"y\": 15.0, \"z\": 2.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 2000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.On Time Delivery %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"On Time Delivery %\"}, \"Name\": \"fact_orders.On Time Delivery %\", \"NativeReferenceName\": \"On Time Delivery %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"On-Time Delivery SLA %\"}}}}}]}}}",
           "filters": "[]"
         },
         {
           "x": 620.0,
-          "y": 20.0,
+          "y": 15.0,
           "z": 3.0,
           "width": 280.0,
-          "height": 130.0,
+          "height": 120.0,
           "tabOrder": 3000,
-          "config": "{\"name\": \"kpi_avg_prep\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 620.0, \"y\": 20.0, \"z\": 3.0, \"width\": 280.0, \"height\": 130.0, \"tabOrder\": 3000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Average Prep Time\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Prep Time\"}, \"Name\": \"fact_orders.Average Prep Time\", \"NativeReferenceName\": \"Average Prep Time\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Avg Kitchen Prep Time (min)\"}}}}}]}}}",
+          "config": "{\"name\": \"kpi_avg_prep\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 620.0, \"y\": 15.0, \"z\": 3.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 3000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Average Prep Time\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Prep Time\"}, \"Name\": \"fact_orders.Average Prep Time\", \"NativeReferenceName\": \"Average Prep Time\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Avg Kitchen Prep Time (min)\"}}}}}]}}}",
           "filters": "[]"
         },
         {
           "x": 920.0,
-          "y": 20.0,
+          "y": 15.0,
           "z": 4.0,
           "width": 280.0,
-          "height": 130.0,
+          "height": 120.0,
           "tabOrder": 4000,
-          "config": "{\"name\": \"kpi_cancellation\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 920.0, \"y\": 20.0, \"z\": 4.0, \"width\": 280.0, \"height\": 130.0, \"tabOrder\": 4000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Cancellation Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Cancellation Rate\"}, \"Name\": \"fact_orders.Cancellation Rate\", \"NativeReferenceName\": \"Cancellation Rate\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Order Cancellation Rate %\"}}}}}]}}}",
+          "config": "{\"name\": \"kpi_cancellation\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 920.0, \"y\": 15.0, \"z\": 4.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 4000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Cancellation Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Cancellation Rate\"}, \"Name\": \"fact_orders.Cancellation Rate\", \"NativeReferenceName\": \"Cancellation Rate\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Order Cancellation Rate %\"}}}}}]}}}",
           "filters": "[]"
         },
         {
           "x": 20.0,
-          "y": 170.0,
+          "y": 150.0,
           "z": 5.0,
-          "width": 580.0,
-          "height": 480.0,
+          "width": 380.0,
+          "height": 250.0,
           "tabOrder": 5000,
-          "config": "{\"name\": \"chart_traffic\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 170.0, \"z\": 5.0, \"width\": 580.0, \"height\": 480.0, \"tabOrder\": 5000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.traffic_level\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"traffic_level\"}, \"Name\": \"fact_orders.traffic_level\", \"NativeReferenceName\": \"traffic_level\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Order Volume by Traffic Level\"}}}}}]}}}",
+          "config": "{\"name\": \"chart_traffic\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 150.0, \"z\": 5.0, \"width\": 380.0, \"height\": 250.0, \"tabOrder\": 5000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.traffic_level\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"traffic_level\"}, \"Name\": \"fact_orders.traffic_level\", \"NativeReferenceName\": \"traffic_level\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Order Volume by Traffic Density\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 620.0,
-          "y": 170.0,
+          "x": 420.0,
+          "y": 150.0,
           "z": 6.0,
-          "width": 580.0,
-          "height": 480.0,
+          "width": 480.0,
+          "height": 250.0,
           "tabOrder": 6000,
-          "config": "{\"name\": \"chart_hourly\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 620.0, \"y\": 170.0, \"z\": 6.0, \"width\": 580.0, \"height\": 480.0, \"tabOrder\": 6000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.order_hour\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"order_hour\"}, \"Name\": \"fact_orders.order_hour\", \"NativeReferenceName\": \"order_hour\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"24-Hour Hourly Demand Throughput Profile\"}}}}}]}}}",
+          "config": "{\"name\": \"chart_hourly\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 420.0, \"y\": 150.0, \"z\": 6.0, \"width\": 480.0, \"height\": 250.0, \"tabOrder\": 6000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.order_hour\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"order_hour\"}, \"Name\": \"fact_orders.order_hour\", \"NativeReferenceName\": \"order_hour\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"24-Hour Hourly Demand Throughput Profile\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 920.0,
+          "y": 150.0,
+          "z": 7.0,
+          "width": 340.0,
+          "height": 250.0,
+          "tabOrder": 7000,
+          "config": "{\"name\": \"chart_weather\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 920.0, \"y\": 150.0, \"z\": 7.0, \"width\": 340.0, \"height\": 250.0, \"tabOrder\": 7000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.weather_condition\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"weather_condition\"}, \"Name\": \"fact_orders.weather_condition\", \"NativeReferenceName\": \"weather_condition\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Order Volume by Weather Condition\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 415.0,
+          "z": 8.0,
+          "width": 380.0,
+          "height": 275.0,
+          "tabOrder": 8000,
+          "config": "{\"name\": \"chart_items\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 415.0, \"z\": 8.0, \"width\": 380.0, \"height\": 275.0, \"tabOrder\": 8000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.item_count\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"item_count\"}, \"Name\": \"fact_orders.item_count\", \"NativeReferenceName\": \"item_count\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Order Volume by Basket Size / Item Count\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 420.0,
+          "y": 415.0,
+          "z": 9.0,
+          "width": 480.0,
+          "height": 275.0,
+          "tabOrder": 9000,
+          "config": "{\"name\": \"chart_dispatch_traffic\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 420.0, \"y\": 415.0, \"z\": 9.0, \"width\": 480.0, \"height\": 275.0, \"tabOrder\": 9000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.traffic_level\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Average Dispatch Delay\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"traffic_level\"}, \"Name\": \"fact_orders.traffic_level\", \"NativeReferenceName\": \"traffic_level\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Dispatch Delay\"}, \"Name\": \"fact_orders.Average Dispatch Delay\", \"NativeReferenceName\": \"Average Dispatch Delay\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Staged Dispatch Delay by Traffic Level\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 920.0,
+          "y": 415.0,
+          "z": 10.0,
+          "width": 340.0,
+          "height": 275.0,
+          "tabOrder": 10000,
+          "config": "{\"name\": \"chart_weather_sla\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 920.0, \"y\": 415.0, \"z\": 10.0, \"width\": 340.0, \"height\": 275.0, \"tabOrder\": 10000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.weather_condition\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.On Time Delivery %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"weather_condition\"}, \"Name\": \"fact_orders.weather_condition\", \"NativeReferenceName\": \"weather_condition\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"On Time Delivery %\"}, \"Name\": \"fact_orders.On Time Delivery %\", \"NativeReferenceName\": \"On Time Delivery %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"On-Time SLA % by Weather Impact\"}}}}}]}}}",
           "filters": "[]"
         }
       ]
     },
     {
       "name": "Section_Kitchen_Wait_Times",
-      "displayName": "2. Kitchen Analytics & Dispatch",
+      "displayName": "2. Kitchen Analytics & Synchronization",
       "displayOption": 1,
       "width": 1280.0,
       "height": 720.0,
@@ -97,42 +137,153 @@
       "visualContainers": [
         {
           "x": 20.0,
-          "y": 20.0,
+          "y": 15.0,
           "z": 1.0,
-          "width": 380.0,
-          "height": 130.0,
+          "width": 280.0,
+          "height": 120.0,
           "tabOrder": 1000,
-          "config": "{\"name\": \"kpi_food_wait\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 20.0, \"z\": 1.0, \"width\": 380.0, \"height\": 130.0, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Food Wait for Rider\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Food Wait for Rider\"}, \"Name\": \"fact_orders.Food Wait for Rider\", \"NativeReferenceName\": \"Food Wait for Rider\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Food Wait for Rider (min)\"}}}}}]}}}",
+          "config": "{\"name\": \"kpi_food_wait\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 15.0, \"z\": 1.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Food Wait for Rider\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Food Wait for Rider\"}, \"Name\": \"fact_orders.Food Wait for Rider\", \"NativeReferenceName\": \"Food Wait for Rider\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Food Wait for Rider (min)\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 420.0,
-          "y": 20.0,
+          "x": 320.0,
+          "y": 15.0,
           "z": 2.0,
-          "width": 380.0,
-          "height": 130.0,
+          "width": 280.0,
+          "height": 120.0,
           "tabOrder": 2000,
-          "config": "{\"name\": \"kpi_rider_wait\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 420.0, \"y\": 20.0, \"z\": 2.0, \"width\": 380.0, \"height\": 130.0, \"tabOrder\": 2000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Rider Wait for Food\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Rider Wait for Food\"}, \"Name\": \"fact_orders.Rider Wait for Food\", \"NativeReferenceName\": \"Rider Wait for Food\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Rider Wait for Food (min)\"}}}}}]}}}",
+          "config": "{\"name\": \"kpi_rider_wait\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 320.0, \"y\": 15.0, \"z\": 2.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 2000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Rider Wait for Food\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Rider Wait for Food\"}, \"Name\": \"fact_orders.Rider Wait for Food\", \"NativeReferenceName\": \"Rider Wait for Food\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Rider Wait for Food (min)\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 820.0,
-          "y": 20.0,
+          "x": 620.0,
+          "y": 15.0,
           "z": 3.0,
-          "width": 380.0,
-          "height": 130.0,
+          "width": 280.0,
+          "height": 120.0,
           "tabOrder": 3000,
-          "config": "{\"name\": \"kpi_dispatch_delay\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 820.0, \"y\": 20.0, \"z\": 3.0, \"width\": 380.0, \"height\": 130.0, \"tabOrder\": 3000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Average Dispatch Delay\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Dispatch Delay\"}, \"Name\": \"fact_orders.Average Dispatch Delay\", \"NativeReferenceName\": \"Average Dispatch Delay\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Avg Staged Dispatch Delay (min)\"}}}}}]}}}",
+          "config": "{\"name\": \"kpi_dispatch_delay\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 620.0, \"y\": 15.0, \"z\": 3.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 3000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Average Dispatch Delay\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Dispatch Delay\"}, \"Name\": \"fact_orders.Average Dispatch Delay\", \"NativeReferenceName\": \"Average Dispatch Delay\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Avg Staged Dispatch Delay (min)\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 920.0,
+          "y": 15.0,
+          "z": 4.0,
+          "width": 280.0,
+          "height": 120.0,
+          "tabOrder": 4000,
+          "config": "{\"name\": \"kpi_total_idle\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 920.0, \"y\": 15.0, \"z\": 4.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 4000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Total Idling Wait Time\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Idling Wait Time\"}, \"Name\": \"fact_orders.Total Idling Wait Time\", \"NativeReferenceName\": \"Total Idling Wait Time\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Total Idling Wait Time (min)\"}}}}}]}}}",
           "filters": "[]"
         },
         {
           "x": 20.0,
-          "y": 170.0,
+          "y": 150.0,
+          "z": 5.0,
+          "width": 610.0,
+          "height": 240.0,
+          "tabOrder": 5000,
+          "config": "{\"name\": \"chart_item_prep\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 150.0, \"z\": 5.0, \"width\": 610.0, \"height\": 240.0, \"tabOrder\": 5000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.item_count\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Average Prep Time\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"item_count\"}, \"Name\": \"fact_orders.item_count\", \"NativeReferenceName\": \"item_count\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Prep Time\"}, \"Name\": \"fact_orders.Average Prep Time\", \"NativeReferenceName\": \"Average Prep Time\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Kitchen Prep Time Scaling by Item Count\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650.0,
+          "y": 150.0,
+          "z": 6.0,
+          "width": 610.0,
+          "height": 240.0,
+          "tabOrder": 6000,
+          "config": "{\"name\": \"chart_traffic_food_wait\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650.0, \"y\": 150.0, \"z\": 6.0, \"width\": 610.0, \"height\": 240.0, \"tabOrder\": 6000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.traffic_level\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Food Wait for Rider\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"traffic_level\"}, \"Name\": \"fact_orders.traffic_level\", \"NativeReferenceName\": \"traffic_level\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Food Wait for Rider\"}, \"Name\": \"fact_orders.Food Wait for Rider\", \"NativeReferenceName\": \"Food Wait for Rider\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Counter Food Waiting Duration by Traffic Level\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 405.0,
+          "z": 7.0,
+          "width": 1240.0,
+          "height": 285.0,
+          "tabOrder": 7000,
+          "config": "{\"name\": \"table_store_league\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 405.0, \"z\": 7.0, \"width\": 1240.0, \"height\": 285.0, \"tabOrder\": 7000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_stores.store_name\"}, {\"queryRef\": \"dim_stores.location\"}, {\"queryRef\": \"fact_orders.Total Orders\"}, {\"queryRef\": \"fact_orders.Average Prep Time\"}, {\"queryRef\": \"fact_orders.Food Wait for Rider\"}, {\"queryRef\": \"fact_orders.Rider Wait for Food\"}, {\"queryRef\": \"fact_orders.On Time Delivery %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"s\", \"Entity\": \"dim_stores\", \"Type\": 0}, {\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"store_name\"}, \"Name\": \"dim_stores.store_name\", \"NativeReferenceName\": \"store_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"location\"}, \"Name\": \"dim_stores.location\", \"NativeReferenceName\": \"location\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Prep Time\"}, \"Name\": \"fact_orders.Average Prep Time\", \"NativeReferenceName\": \"Average Prep Time\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Food Wait for Rider\"}, \"Name\": \"fact_orders.Food Wait for Rider\", \"NativeReferenceName\": \"Food Wait for Rider\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Rider Wait for Food\"}, \"Name\": \"fact_orders.Rider Wait for Food\", \"NativeReferenceName\": \"Rider Wait for Food\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"On Time Delivery %\"}, \"Name\": \"fact_orders.On Time Delivery %\", \"NativeReferenceName\": \"On Time Delivery %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Restaurant Hub Efficiency & Bottleneck Scorecard\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Section_Fleet_Logistics",
+      "displayName": "3. Fleet Logistics & Dispatch Diagnostics",
+      "displayOption": 1,
+      "width": 1280.0,
+      "height": 720.0,
+      "filters": "[]",
+      "config": "{}",
+      "visualContainers": [
+        {
+          "x": 20.0,
+          "y": 15.0,
+          "z": 1.0,
+          "width": 280.0,
+          "height": 120.0,
+          "tabOrder": 1000,
+          "config": "{\"name\": \"kpi_p3_travel\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 15.0, \"z\": 1.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Average Rider Travel Time\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Rider Travel Time\"}, \"Name\": \"fact_orders.Average Rider Travel Time\", \"NativeReferenceName\": \"Average Rider Travel Time\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Avg Courier Transit Time (min)\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 320.0,
+          "y": 15.0,
+          "z": 2.0,
+          "width": 280.0,
+          "height": 120.0,
+          "tabOrder": 2000,
+          "config": "{\"name\": \"kpi_p3_delay\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 320.0, \"y\": 15.0, \"z\": 2.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 2000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Average Dispatch Delay\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Dispatch Delay\"}, \"Name\": \"fact_orders.Average Dispatch Delay\", \"NativeReferenceName\": \"Average Dispatch Delay\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Avg Staged Dispatch Delay (min)\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 620.0,
+          "y": 15.0,
+          "z": 3.0,
+          "width": 280.0,
+          "height": 120.0,
+          "tabOrder": 3000,
+          "config": "{\"name\": \"kpi_p3_ontime\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 620.0, \"y\": 15.0, \"z\": 3.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 3000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.On Time Delivery %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"On Time Delivery %\"}, \"Name\": \"fact_orders.On Time Delivery %\", \"NativeReferenceName\": \"On Time Delivery %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Courier On-Time Fulfillment %\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 920.0,
+          "y": 15.0,
           "z": 4.0,
-          "width": 1180.0,
-          "height": 480.0,
+          "width": 280.0,
+          "height": 120.0,
           "tabOrder": 4000,
-          "config": "{\"name\": \"table_store_league\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 170.0, \"z\": 4.0, \"width\": 1180.0, \"height\": 480.0, \"tabOrder\": 4000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_stores.store_name\"}, {\"queryRef\": \"dim_stores.location\"}, {\"queryRef\": \"fact_orders.Total Orders\"}, {\"queryRef\": \"fact_orders.Average Prep Time\"}, {\"queryRef\": \"fact_orders.Food Wait for Rider\"}, {\"queryRef\": \"fact_orders.On Time Delivery %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"s\", \"Entity\": \"dim_stores\", \"Type\": 0}, {\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"store_name\"}, \"Name\": \"dim_stores.store_name\", \"NativeReferenceName\": \"store_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"location\"}, \"Name\": \"dim_stores.location\", \"NativeReferenceName\": \"location\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"fact_orders.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Prep Time\"}, \"Name\": \"fact_orders.Average Prep Time\", \"NativeReferenceName\": \"Average Prep Time\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Food Wait for Rider\"}, \"Name\": \"fact_orders.Food Wait for Rider\", \"NativeReferenceName\": \"Food Wait for Rider\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"On Time Delivery %\"}, \"Name\": \"fact_orders.On Time Delivery %\", \"NativeReferenceName\": \"On Time Delivery %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Restaurant Hub Efficiency & Bottleneck Scorecard\"}}}}}]}}}",
+          "config": "{\"name\": \"kpi_p3_eff\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 920.0, \"y\": 15.0, \"z\": 4.0, \"width\": 280.0, \"height\": 120.0, \"tabOrder\": 4000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_orders.Dispatch Efficiency Index\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Dispatch Efficiency Index\"}, \"Name\": \"fact_orders.Dispatch Efficiency Index\", \"NativeReferenceName\": \"Dispatch Efficiency Index\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Dispatch Efficiency Index\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 150.0,
+          "z": 5.0,
+          "width": 610.0,
+          "height": 240.0,
+          "tabOrder": 5000,
+          "config": "{\"name\": \"chart_travel_traffic\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 150.0, \"z\": 5.0, \"width\": 610.0, \"height\": 240.0, \"tabOrder\": 5000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.traffic_level\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Average Rider Travel Time\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"traffic_level\"}, \"Name\": \"fact_orders.traffic_level\", \"NativeReferenceName\": \"traffic_level\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Rider Travel Time\"}, \"Name\": \"fact_orders.Average Rider Travel Time\", \"NativeReferenceName\": \"Average Rider Travel Time\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Rider Transit Duration by Traffic Level\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650.0,
+          "y": 150.0,
+          "z": 6.0,
+          "width": 610.0,
+          "height": 240.0,
+          "tabOrder": 6000,
+          "config": "{\"name\": \"chart_travel_weather\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650.0, \"y\": 150.0, \"z\": 6.0, \"width\": 610.0, \"height\": 240.0, \"tabOrder\": 6000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_orders.weather_condition\", \"active\": true}], \"Y\": [{\"queryRef\": \"fact_orders.Average Rider Travel Time\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fact_orders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"weather_condition\"}, \"Name\": \"fact_orders.weather_condition\", \"NativeReferenceName\": \"weather_condition\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Average Rider Travel Time\"}, \"Name\": \"fact_orders.Average Rider Travel Time\", \"NativeReferenceName\": \"Average Rider Travel Time\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Transit Time Inflation under Severe Weather\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 405.0,
+          "z": 7.0,
+          "width": 1240.0,
+          "height": 285.0,
+          "tabOrder": 7000,
+          "config": "{\"name\": \"table_dispatch_log\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 405.0, \"z\": 7.0, \"width\": 1240.0, \"height\": 285.0, \"tabOrder\": 7000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dispatch_performance.order_id\"}, {\"queryRef\": \"dispatch_performance.store_id\"}, {\"queryRef\": \"dispatch_performance.predicted_dispatch_delay\"}, {\"queryRef\": \"dispatch_performance.predicted_rider_travel_time\"}, {\"queryRef\": \"dispatch_performance.food_wait_for_rider\"}, {\"queryRef\": \"dispatch_performance.rider_wait_for_food\"}, {\"queryRef\": \"dispatch_performance.on_time_delivery\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dispatch_performance\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"order_id\"}, \"Name\": \"dispatch_performance.order_id\", \"NativeReferenceName\": \"Order ID\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"store_id\"}, \"Name\": \"dispatch_performance.store_id\", \"NativeReferenceName\": \"Store ID\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"predicted_dispatch_delay\"}, \"Name\": \"dispatch_performance.predicted_dispatch_delay\", \"NativeReferenceName\": \"Dispatch Delay (min)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"predicted_rider_travel_time\"}, \"Name\": \"dispatch_performance.predicted_rider_travel_time\", \"NativeReferenceName\": \"Rider Travel (min)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"food_wait_for_rider\"}, \"Name\": \"dispatch_performance.food_wait_for_rider\", \"NativeReferenceName\": \"Food Wait (min)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"rider_wait_for_food\"}, \"Name\": \"dispatch_performance.rider_wait_for_food\", \"NativeReferenceName\": \"Rider Wait (min)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"on_time_delivery\"}, \"Name\": \"dispatch_performance.on_time_delivery\", \"NativeReferenceName\": \"On-Time (1/0)\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"literal\": {\"value\": true}}}, \"text\": {\"expr\": {\"literal\": {\"value\": \"Real-Time Courier Staged Dispatch Log\"}}}}}]}}}",
           "filters": "[]"
         }
       ]

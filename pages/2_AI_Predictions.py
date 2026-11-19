@@ -109,7 +109,7 @@ with tab_live:
                     title="Time Synchronization Profile",
                     xaxis_title="Minutes from Order Placement"
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True, key=f"sync_timeline_chart_{item['order_id']}_{idx}")
 
 # TAB 2: WHAT-IF SIMULATOR
 with tab_simulator:

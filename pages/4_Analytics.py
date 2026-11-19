@@ -62,7 +62,7 @@ with tab1:
             color_continuous_scale="Blues",
             title="Order Volume Distribution Across Hours of Day"
         )
-        st.plotly_chart(fig_hour, use_container_width=True)
+        st.plotly_chart(fig_hour, use_container_width=True, key="chart_hourly_volume")
 
     with col_k2:
         st.subheader("Actual vs Predicted Kitchen Preparation (P50)")
@@ -90,7 +90,7 @@ with tab1:
             min_v = min(df_pred["actual_prep_time"].min(), df_pred["predicted_prep_time"].min())
             max_v = max(df_pred["actual_prep_time"].max(), df_pred["predicted_prep_time"].max())
             fig_scatter.add_shape(type="line", x0=min_v, y0=min_v, x1=max_v, y1=max_v, line=dict(color="red", dash="dash"))
-            st.plotly_chart(fig_scatter, use_container_width=True)
+            st.plotly_chart(fig_scatter, use_container_width=True, key="chart_scatter_prep")
         else:
             st.info("Insufficient historical delivered orders to plot actual vs predicted prep scatter.")
 
@@ -114,7 +114,7 @@ with tab2:
             fig_box.add_trace(go.Box(y=df_waits["food_wait_for_rider"], name="Food Wait for Rider (min)", marker_color="#3B82F6"))
             fig_box.add_trace(go.Box(y=df_waits["rider_wait_for_food"], name="Rider Wait for Food (min)", marker_color="#10B981"))
             fig_box.update_layout(title="Idle Waiting Time Distributions", yaxis_title="Minutes")
-            st.plotly_chart(fig_box, use_container_width=True)
+            st.plotly_chart(fig_box, use_container_width=True, key="chart_box_waits")
         else:
             st.info("No completed order metrics recorded yet.")
 
@@ -139,7 +139,7 @@ with tab2:
                 labels={"value": "Minutes", "variable": "Metric", "traffic_level": "Traffic Level"},
                 title="Staged Dispatch Delay vs Transit Time by Traffic"
             )
-            st.plotly_chart(fig_td, use_container_width=True)
+            st.plotly_chart(fig_td, use_container_width=True, key="chart_bar_traffic_delay")
         else:
             st.info("No dispatch delay data available.")
 

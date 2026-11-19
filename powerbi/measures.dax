@@ -1,0 +1,80 @@
+// ==============================================================
+// KitchenSync AI: Comprehensive DAX Measures Library
+// ==============================================================
+
+// 1. Core Order Volume KPIs
+Total Orders = 
+COUNTROWS(fact_orders)
+
+Active Orders = 
+CALCULATE(
+    COUNTROWS(fact_orders),
+    fact_orders[order_status] IN {"PLACED", "PREPARING", "PACKING"}
+)
+
+Delivered Orders = 
+CALCULATE(
+    COUNTROWS(fact_orders),
+    fact_orders[order_status] = "DELIVERED"
+)
+
+// 2. Kitchen Preparation Time Measures
+Average Prep Time = 
+AVERAGE(fact_orders[actual_prep_time])
+
+Predicted Prep Time P50 = 
+AVERAGE(fact_orders[predicted_prep_time])
+
+Predicted Prep Time P90 = 
+AVERAGE(fact_orders[predicted_prep_time_p90])
+
+Average Prediction Error = 
+AVERAGE(fact_orders[prep_prediction_error])
+
+// 3. Waiting Time Metrics (Core Business Objectives)
+Food Wait for Rider = 
+AVERAGE(fact_orders[food_wait_for_rider])
+
+Rider Wait for Food = 
+AVERAGE(fact_orders[rider_wait_for_food])
+
+Total Idling Wait Time = 
+[Food Wait for Rider] + [Rider Wait for Food]
+
+// 4. SLA & Delivery Quality Metrics
+On Time Delivery % = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS(fact_orders),
+        fact_orders[on_time_delivery] = 1 || fact_orders[on_time_delivery] = TRUE()
+    ),
+    COUNTROWS(fact_orders),
+    0
+) * 100
+
+Cancellation Rate = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS(fact_orders),
+        fact_orders[cancellation_flag] = 1 || fact_orders[cancellation_flag] = TRUE()
+    ),
+    COUNTROWS(fact_orders),
+    0
+) * 100
+
+// 5. Rider & Dispatch Efficiency
+Average Dispatch Delay = 
+AVERAGE(fact_orders[predicted_dispatch_delay])
+
+Average Delivery Distance = 
+AVERAGE(fact_orders[distance_km])
+
+Average Rider Travel Time = 
+AVERAGE(fact_orders[predicted_rider_travel_time])
+
+Dispatch Efficiency Index = 
+DIVIDE(
+    [On Time Delivery %],
+    1 + [Total Idling Wait Time],
+    0
+)

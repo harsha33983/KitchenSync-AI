@@ -1,0 +1,34 @@
+{
+  "dataset_name": "Indian Food Delivery Operations Dataset (Zomato / Swiggy Logistics)",
+  "total_records": 45584,
+  "test_records": 9117,
+  "models": {
+    "prep_time_p50": {
+      "model_name": "HistGradientBoostingRegressor (P50)",
+      "loss_function": "quantile (0.50)",
+      "mae_minutes": 1.393,
+      "rmse_minutes": 1.74,
+      "r2_score": 0.914,
+      "median_absolute_error": 1.898,
+      "pinball_loss": 0.697
+    },
+    "prep_time_p90": {
+      "model_name": "HistGradientBoostingRegressor (P90)",
+      "loss_function": "quantile (0.90)",
+      "mae_minutes": 1.986,
+      "rmse_minutes": 2.617,
+      "pinball_loss": 0.222,
+      "empirical_coverage_percentage": 88.59,
+      "quantile_crossing_percentage": 1.12,
+      "target_coverage_percentage": 90.0
+    },
+    "rider_travel_model": {
+      "model_name": "HistGradientBoostingRegressor",
+      "loss_function": "squared_error",
+      "mae_minutes": 5.188,
+      "rmse_minutes": 6.616,
+      "r2_score": 0.503,
+      "median_absolute_error": 4.336
+    }
+  }
+}
